@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Use Jekyll on git pages"
+title:  "Git pages&Jekyll笔记"
 date:   2016-10-26 13:31:01 +0800
 categories: jekyll
 tag: jekyll
@@ -12,17 +12,15 @@ tag: jekyll
 
 
 
-
-
-# Git pages & Jekyll
+# Git pages&Jekyll install
 
 ## 1.使用git pages
 
-参考https://pages.github.com/
+参考<https://pages.github.com/>
 
 ## 2. 安装Jekyll
 
-参考http://jekyll-windows.juthilo.com/1-ruby-and-devkit/ 介绍了如何在windows上安装，其他版本http://jekyllcn.com/
+参考[jekyll安装](http://jekyll-windows.juthilo.com/1-ruby-and-devkit/) 介绍了如何在windows上安装，[其他版本安装](http://jekyllcn.com/)
 
 在windows 上出现部分问题：
 
@@ -34,7 +32,7 @@ Invalid configuration or no Rubies listed. Please fix 'config.yml'
 and rerun 'ruby dk.rb install'
 ```
 
-​    参考 http://stackoverflow.com/questions/20810653/how-do-i-configure-config-yml-so-that-i-can-install-devki，需要设置C:\RubyDevKit\config中的Ruby路径
+​    参考 <http://stackoverflow.com/questions/20810653/how-do-i-configure-config-yml-so-that-i-can-install-devki>，需要设置C:\RubyDevKit\config中的Ruby路径
 
 ```sh
 # This configuration file contains the absolute path locations of all
@@ -56,7 +54,7 @@ and rerun 'ruby dk.rb install'
 
 1. gem install时出错
 
-   参考http://stackoverflow.com/questions/19150017/ssl-error-when-installing-rubygems-unable-to-pull-data-from-https-rubygems-o/27298259#27298259，需要安装gem包对于windows：
+   参考<http://stackoverflow.com/questions/19150017/ssl-error-when-installing-rubygems-unable-to-pull-data-from-https-rubygems-o/27298259#27298259>，需要安装gem包对于windows：
 
 ```sh
  Goto link http://rubygems.org/pages/download
