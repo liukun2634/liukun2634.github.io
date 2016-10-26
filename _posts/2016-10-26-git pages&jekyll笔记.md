@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git pages&Jekyll"
+title:  "Git pages&Jekyll笔记"
 date:   2016-10-26 13:31:01 +0800
 categories: jekyll
 tag: jekyll

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Sublime"
+title:  "Sublime笔记"
 date:   2016-10-1 13:31:01 +0800
 categories: sublime
 tag: sublime
