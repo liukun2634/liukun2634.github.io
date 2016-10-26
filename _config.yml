@@ -1,14 +1,16 @@
 # Site settings
 name: Less Or More
 email: 996529090@qq.com
-author: kaka2634
-url: http://www.kaka2634.com
-resume_site: http://www.hifreud.com/Resume.io/
+author: Kun Liu
+url: https://kaka2634.github.io/
+#TODO：need resume pages
+resume_site: https://kaka2634.github.io/
 github: https://github.com/kaka2634/
-description: Actually, less is more!
-meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
-motto: It's our wits that make us men.
-banner: 学而不思则罔，思而不学则殆。
+description: 我的博客
+meta_description: 我的博客
+name: 刘琨
+motto: 我的文章
+banner: 主人好像没有留下什么
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
@@ -21,16 +23,3 @@ highlighter: rouge
 
 # Build settings
 markdown: kramdown
-
-FB:
-  comments :
-    provider : kaka2634
-    duoshuo:
-        short_name : kaka2634
-    disqus :
-        short_name : kaka2634
-    # facebook :
-    #   appid : 123
-    #   num_posts: 5
-    #   width: 580
-    #   colorscheme: light
