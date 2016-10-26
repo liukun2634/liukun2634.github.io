@@ -6316,7 +6316,9 @@ hr {
 .docs-header,
 .docs-home {
   color: #b9c8e0;
-  background-color: #1d365d;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.8)), url('../images/backgroud.jpg');
+  background-size: cover;
+
 }
 /* Page headers */
 .docs-header {
