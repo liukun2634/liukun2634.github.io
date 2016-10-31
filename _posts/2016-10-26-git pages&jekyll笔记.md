@@ -68,3 +68,8 @@ and rerun 'ruby dk.rb install'
 ## 使用Jekyll
 
 下载相应Jekyll主题，配置_config.yml，之后在目录内执行Jekyll sever 即可运行
+
+
+
+###注意使用markdown时content与title之间要空两行
+
