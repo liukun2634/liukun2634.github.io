@@ -1,6 +1,6 @@
-# Microdust 微尘
+# Kun's Blog
 
-This is a blog created by Azeril. The blog is live at [azeril.me](http://azeril.me/).
+This is a blog created by KunLiu. The blog is live at [kaka2634.github.io](https://kaka2634.github.io/).
 
 ## Thanks
 
@@ -14,6 +14,7 @@ The blog used many tool/service,many thanks to:
 * [DNSPod](https://www.dnspod.cn/), the DNS service provider who surport the domain name resolution;
 * [Duoshuo](http://duoshuo.com/), a socialization comments plugin.
 * [Google](http://google.com), the one who tell me how to make it.
+* [[azeril.me](http://azeril.me/)](http://azeril.me/) the one give the theme.
 * …
 
 ## How To Creat A Jekyll Blog

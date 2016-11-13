@@ -1,28 +1,28 @@
 # Site settings
-title: Microdust
+title: Kun's Blog
 header-img: "img/autumn2.jpg"
-tagline: "吉光片羽"  
-description: "在遙遠的地方 一切虔誠終必相遇"  
+tagline: "say something"  
+description: "Be better"  
 baseurl: ""
-url: "http://azeril.me"  
+url: "https://kaka2634.github.io/"  
 #url: "http://localhost:4000"
 
 # About/contact
 owner: 
-  name: "Azeril"
-  email: azeril@live.cn
-  bio: "明朝即長路 惜取此時心"
+  name: "KunLiu"
+  email: 996529090@qq.com
+  bio: "mid or feed"
 
 # Data
 gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.ico
 
-douban_username: Azeril
-twitter_username: Azeril_Lapland  
-github_username: Azeril  
-facebook_username: Azeril_Lapland  
-weibo_username: Azeril  
-zhihu_username: Azeril  
+douban_username: none
+twitter_username: none  
+github_username: kaka2634  
+facebook_username: KunLiu 
+weibo_username: 雍容的帅小小 
+zhihu_username: none
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -40,7 +40,7 @@ paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: Asia/Shanghai
+timezone: Asia/Beijing
 
 # Title
 
@@ -53,7 +53,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Azeril"
+      author: "KunLiu"
       header-img: "img/fantasy.jpg" # We don't want posts without a header image, that whould mean white on white
 
 
@@ -61,9 +61,9 @@ defaults:
 comments :
   provider : duoshuo
   duoshuo :
-    short_name : Azeril
+    short_name : none
   disqus :
-      short_name : Azeril
+      short_name : none
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-66863061-1
