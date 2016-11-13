@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  {% include head.html %}
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-  <body class="index">
+{% include head.html %}
 
-    {% include header.html %}
-    {% include docs_header.html %}
-    {% if page.title %}
-      {% include banner.html %}
-    {% endif %}
+<body ontouchstart="">
+
+    {% include nav.html %}
 
     {{ content }}
-    
+  
     {% include footer.html %}
 
-  </body>
+</body>
+
 </html>
