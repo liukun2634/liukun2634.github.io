@@ -1,0 +1,28 @@
+# Site settings
+name: Less Or More
+email: 996529090@qq.com
+author: Kun Liu
+url: https://kaka2634.github.io/
+#TODO：need resume pages
+resume_site: https://kaka2634.github.io/
+github: https://github.com/kaka2634/
+description: 我的博客
+meta_description: 我的博客
+name: 刘琨
+motto: 我的文章
+banner: 主人好像没有留下什么
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+github_username: kaka2634
+highlighter: rouge
+
+# Build settings
+markdown: kramdown
+# Markdown Processors
+kramdown:    # Better to turn on recognition of Github Flavored Markdown
+  input: GFM
