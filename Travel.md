@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Travel"
-description: "路与风景"
+description: "我的旅行录"
 header-img: "img/plane2.jpg"
 ---
 

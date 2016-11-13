@@ -1,6 +1,6 @@
 # Site settings
 title: Kun's Blog
-header-img: "img/autumn2.jpg"
+header-img: "img/elephant.jpg"
 tagline: "say something"  
 description: "Be better"  
 baseurl: ""
@@ -54,7 +54,7 @@ defaults:
     values:
       layout: "post"
       author: "KunLiu"
-      header-img: "img/fantasy.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/mountain.jpg" # We don't want posts without a header image, that whould mean white on white
 
 
 # Comments 
