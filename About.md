@@ -8,7 +8,6 @@ header-img: "img/seagulls.jpg"
 > 这就是我
 
 <center>
-
     <p><img src="img/Zero.jpg" align="center"></p>
 </center>
 
