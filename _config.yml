@@ -18,11 +18,11 @@ gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.ico
 
 douban_username: none
-twitter_username: none  
+twitter_username: liukun2634 
 github_username: kaka2634  
-facebook_username: KunLiu 
-weibo_username: 雍容的帅小小 
-zhihu_username: none
+facebook_username: kun.liu.5099940
+weibo_username: 3509237361
+zhihu_username: liukun-21
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -61,7 +61,7 @@ defaults:
 comments :
   provider : duoshuo
   duoshuo :
-    short_name : none
+    short_name : liukun
   disqus :
       short_name : none
 
