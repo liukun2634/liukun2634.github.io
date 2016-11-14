@@ -2,13 +2,13 @@
 layout: page
 title: "About"
 description: "你好，我叫刘琨"
-header-img: "img/seagulls.jpg"
+header-img: "img/autumn.jpg"
 ---
 
 > 这就是我
 
 <center>
-    <p><img src="img/me.png" align="center"></p>
+    <p><img src="img/kun.png" align="center"></p>
 </center>
 
 > 自我陈述

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Git pages&Jekyll笔记"
-categories: [jekyll]
+categories: [study]
 tag: [gitpages,jekyll ]
 description: using jekyll
 ---
