@@ -6,16 +6,15 @@ header-img: "img/seagulls.jpg"
 ---
 
 <center>
-    <p><img src="http://dreamofbook.qiniudn.com/Zero.JPG" align="center"></p>
+    <p><img src="img/Zero.jpg" align="center"></p>
 </center>
 
-一个学习通信的研究僧，不知道为什么喜欢倒腾博客，大概是看起来很厉害的样子。
+> 写博客的目的
 
-——KunLiu
+一个学习通信的研究僧，想用于记录点平时的笔记什么的。
 
-
-> Live long and prosper
+<p align="right">——刘琨</p>
 
 <center>
-    <p><img src="http://dreamofbook.qiniudn.com/hacker.png" align="center"></p>
+    <p><img src="img/hacker.png" align="center"></p>
 </center>
