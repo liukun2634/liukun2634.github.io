@@ -8,7 +8,7 @@ header-img: "img/seagulls.jpg"
 > 这就是我
 
 <center>
-    <p><img src="img/Zero.jpg" align="center"></p>
+    <p><img src="img/hacker.png" align="center"></p>
 </center>
 
 > 自我陈述
