@@ -1,13 +1,12 @@
 ---
 layout: post
 title:  "Git pages&Jekyll笔记"
-categories: [study]
-tag: [gitpages,jekyll ]
-description: using jekyll
+categories: study
+tag: jekyll
 ---
 
-
-
+* content
+{:toc}
 
 
 
