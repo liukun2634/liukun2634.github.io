@@ -5,6 +5,18 @@ description: "得力的助手"
 header-img: "img/seagulls.jpg"
 ---
 
+### Cloud websites
+
+[Google Drive](https://www.google.com/intl/zh-CN/drive/)
+
+
+
+### Thesis searcher
+[IEEE Xplore](http://ieeexplore.ieee.org/Xplore/home.jsp)
+
+[ACM](http://dl.acm.org/)
+
+[mendeley](https://www.mendeley.com/) reference control 
 
 ### Rule 
 
@@ -113,5 +125,7 @@ header-img: "img/seagulls.jpg"
 [iPanda](http://live.ipanda.com/) Panda live
 
 [The Scale of Universe2](http://htwins.net/scale2/)
+
+
 
 
