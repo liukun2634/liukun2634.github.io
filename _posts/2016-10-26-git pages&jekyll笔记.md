@@ -24,7 +24,6 @@ tag: jekyll
 在windows 上出现部分问题：
 
 1. 安装ruby 出现问题
-
 ```sh
 C:\Devkit>ruby dk.rb install
 Invalid configuration or no Rubies listed. Please fix 'config.yml'
@@ -32,7 +31,6 @@ and rerun 'ruby dk.rb install'
 ```
 
 ​    参考 <http://stackoverflow.com/questions/20810653/how-do-i-configure-config-yml-so-that-i-can-install-devki>，需要设置C:\RubyDevKit\config中的Ruby路径
-
 ```sh
 # This configuration file contains the absolute path locations of all
 # installed Rubies to be enhanced to work with the DevKit. This config
@@ -51,10 +49,8 @@ and rerun 'ruby dk.rb install'
 - "C:/Ruby23-x64"
 ```
 
-1. gem install时出错
-
+2. gem install时出错
    参考<http://stackoverflow.com/questions/19150017/ssl-error-when-installing-rubygems-unable-to-pull-data-from-https-rubygems-o/27298259#27298259>，需要安装gem包对于windows：
-
 ```sh
  Goto link http://rubygems.org/pages/download
 
@@ -70,5 +66,26 @@ and rerun 'ruby dk.rb install'
 
 
 
-###注意使用markdown时content与title之间要空两行
+## 安装Mathjax插件
 
+参考[@Afred sun](http://alfred-sun.github.io/blog/2014/12/05/github-pages/)大神的博客，复制粘贴相应代码到对应标签中。
+
+唯一出现问题：在本地可以渲染公式，push到gitpages无法正确渲染。
+
+解决方法：
+
+通过调用审查来调试，可以看到错误
+
+``` sh
+This request has been blocked; the content must be served over HTTPS.
+```
+
+搜索答案，把博客中mathjax插件调用代码中的["https:去"掉即可](http://stackoverflow.com/questions/27965975/deezer-content-is-served-over-http) 。
+
+困扰很久的问题只要调用审查元素就轻松解决，没学过前端不知道审查调试的重要性。
+
+
+
+## 使用Markdown
+
+**注意使用markdown时content与title之间要空两行**
