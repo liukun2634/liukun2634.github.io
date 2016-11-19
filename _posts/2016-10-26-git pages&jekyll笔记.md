@@ -24,6 +24,7 @@ tag: jekyll
 在windows 上出现部分问题：
 
 1. 安装ruby 出现问题
+
 ```sh
 C:\Devkit>ruby dk.rb install
 Invalid configuration or no Rubies listed. Please fix 'config.yml'
@@ -31,6 +32,7 @@ and rerun 'ruby dk.rb install'
 ```
 
 ​    参考 <http://stackoverflow.com/questions/20810653/how-do-i-configure-config-yml-so-that-i-can-install-devki>，需要设置C:\RubyDevKit\config中的Ruby路径
+
 ```sh
 # This configuration file contains the absolute path locations of all
 # installed Rubies to be enhanced to work with the DevKit. This config
@@ -51,6 +53,7 @@ and rerun 'ruby dk.rb install'
 
 2. gem install时出错
    参考<http://stackoverflow.com/questions/19150017/ssl-error-when-installing-rubygems-unable-to-pull-data-from-https-rubygems-o/27298259#27298259>，需要安装gem包对于windows：
+
 ```sh
  Goto link http://rubygems.org/pages/download
 
@@ -80,7 +83,7 @@ and rerun 'ruby dk.rb install'
 This request has been blocked; the content must be served over HTTPS.
 ```
 
-搜索答案，把博客中mathjax插件调用代码中的["https:去"掉即可](http://stackoverflow.com/questions/27965975/deezer-content-is-served-over-http) 。
+搜索答案，把博客中mathjax插件调用代码中的["https:"去掉即可](http://stackoverflow.com/questions/27965975/deezer-content-is-served-over-http) 。
 
 困扰很久的问题只要调用审查元素就轻松解决，没学过前端不知道审查调试的重要性。
 
