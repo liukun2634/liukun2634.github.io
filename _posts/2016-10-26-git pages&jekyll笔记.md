@@ -91,11 +91,11 @@ This request has been blocked; the content must be served over HTTPS.
 
 ## 5.申请域名
 
-正常来说，使用[kaka2634.github.io](kaka2634.github.io)就可以打开我的博客主页了，但是为了更好记住地址，可以申请一个免费的域名。
+正常来说，使用[kaka2634.github.io](http://kaka2634.github.io)就可以打开我的博客主页了，但是为了更好记住地址，可以申请一个免费的域名。
 
 参考文章为[http://itcoding.tk/2016/06/26/set-up-custom-domain-for-github-pages/](http://itcoding.tk/2016/06/26/set-up-custom-domain-for-github-pages/)，里面使用了[Freenom](https://my.freenom.com/clientarea.php)来注册免费域名，使用[DNSPod](https://www.dnspod.cn/)来免费的域名解析服务。之后给git文件增加CNAME文件，修改Freenom的默认解析服务为DNSPod就可以使用新的域名地址了。
 
-新的域名地址是：[kunliublog.tk](kunliublog.tk)
+新的域名地址是：[kunliublog.tk](http://kunliublog.tk)
 
 ## 6.使用Markdown
 
