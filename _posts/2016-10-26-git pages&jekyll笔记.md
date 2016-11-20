@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git pages&Jekyll笔记"
+title:  "Git pages&Jekyll构建博客"
 categories: study
 tag: jekyll
 ---
@@ -11,7 +11,7 @@ tag: jekyll
 
 
 
-# Git pages&Jekyll install
+# Git pages&Jekyll 
 
 ## 1.使用git pages
 
@@ -63,13 +63,13 @@ and rerun 'ruby dk.rb install'
 4. now run gem install command
 ```
 
-## 使用Jekyll
+## 3.使用Jekyll
 
 下载相应Jekyll主题，配置_config.yml，之后在目录内执行Jekyll sever 即可运行
 
 
 
-## 安装Mathjax插件
+## 4.安装Mathjax插件
 
 参考[@Afred sun](http://alfred-sun.github.io/blog/2014/12/05/github-pages/)大神的博客，复制粘贴相应代码到对应标签中。
 
@@ -89,6 +89,14 @@ This request has been blocked; the content must be served over HTTPS.
 
 
 
-## 使用Markdown
+## 5.申请域名
+
+正常来说，使用[kaka2634.github.io](kaka2634.github.io)就可以打开我的博客主页了，但是为了更好记住地址，可以申请一个免费的域名。
+
+参考文章为[http://itcoding.tk/2016/06/26/set-up-custom-domain-for-github-pages/](http://itcoding.tk/2016/06/26/set-up-custom-domain-for-github-pages/)，里面使用了[Freenom](https://my.freenom.com/clientarea.php)来注册免费域名，使用[DNSPod](https://www.dnspod.cn/)来免费的域名解析服务。之后给git文件增加CNAME文件，修改Freenom的默认解析服务为DNSPod就可以使用新的域名地址了。
+
+新的域名地址是：[kunliublog.tk](kunliublog.tk)
+
+## 6.使用Markdown
 
 **注意使用markdown时content与title之间要空两行**
