@@ -6,10 +6,13 @@ header-img: "img/bay.jpg"
 ---
 
 
-<div class="post-list">
+<div class="one-tag-list">
 {% for tag in site.tags %}
-<h3  id="{{tag[0]}}">{{ tag[0] | capitalize }}</h3>
-<ul class="post-list">
+<span class="fa fa-tag listing-seperator" id="{{ tag[0] }}">
+<span class="tag-text">{{ tag[0] | capitalize }}</span>
+</span>
+<ul class="one-tag-list">
+		
 {% assign pages_list = tag[1] %}
 {% for post in pages_list %}
 {% if post.title != null %}
