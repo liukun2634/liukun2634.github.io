@@ -97,6 +97,43 @@ This request has been blocked; the content must be served over HTTPS.
 
 新的域名地址是：[kunliublog.tk](http://kunliublog.tk)
 
-## 6.使用Markdown
+
+
+## 6.谷歌站点统计
+
+申请谷歌站点统计账号，获取序列号XXX；
+
+在_config.yml 文件中增加  google_analytics:XXX；
+
+在index.html文件下增加如下代码，将XXX改为你的序列号。
+
+```html
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'XXX', 'auto');
+  ga('send', 'pageview');
+
+</script>
+```
+
+
+
+## 7.使用Markdown
 
 **注意使用markdown时content与title之间要空两行**
+
+
+
+## 8. 修改相应文件
+
++ 修改head.html文件中 favicon路径为
+
+  ```html
+  <link rel="shortcut icon" href="{{site.url}}/img/favicon.png">
+  ```
+
+  ​

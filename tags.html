@@ -6,9 +6,9 @@ header-img: "img/bay.jpg"
 ---
 
 
-<div id="post-list">
+<div class="post-list">
 {% for tag in site.tags %}
-<h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
+<h3  id="{{tag[0]}}">{{ tag[0] | capitalize }}</h3>
 <ul class="post-list">
 {% assign pages_list = tag[1] %}
 {% for post in pages_list %}
