@@ -1,6 +1,17 @@
 # Kun's Blog
 
-This is a blog created by KunLiu. The blog is live at [kaka2634.github.io](https://kaka2634.github.io/).
+**[The live blog: kunliublog.tk](https://kunliublog.tk/)**.
+
+## History
+
+#### version 1.0
+
++ tags support: fixed tags linking bug
++ new css style: get from hux
++ google analysis support: change the google analysis ID
++ two categories support: study and travel 
+
+
 
 ## Thanks
 
@@ -14,14 +25,7 @@ The blog used many tool/service,many thanks to:
 * [DNSPod](https://www.dnspod.cn/), the DNS service provider who surport the domain name resolution;
 * [Duoshuo](http://duoshuo.com/), a socialization comments plugin.
 * [Google](http://google.com), the one who tell me how to make it.
-* [[azeril.me](http://azeril.me/)](http://azeril.me/) the one give the theme.
-* …
+* [azeril](http://azeril.me/) the one whom I got the basic theme from.
+* [hux](https://huangxuan.me/) the one whom I got most of css style from.
 
-## How To Creat A Jekyll Blog
 
-[Build-Your-First-GitHub-Pages-Blog](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
-
-Build your blog Step by step
-## Just write
-
-Start writing now！
