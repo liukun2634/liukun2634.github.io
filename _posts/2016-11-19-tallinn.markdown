@@ -2,7 +2,8 @@
 layout: post
 title: "塔林 "
 categories: travel
-tag: Finland 
+tag: Estonia
+subtitle: "安静的小巷和石板路的旧城" 
 ---
 
 > 塔林（Tallinn）是[波罗的海](https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BE%85%E7%9A%84%E6%B5%B7)最内部的[芬兰湾](https://zh.wikipedia.org/wiki/%E8%8A%AC%E8%98%AD%E7%81%A3)滨的[爱沙尼亚共和国](https://zh.wikipedia.org/wiki/%E6%84%9B%E6%B2%99%E5%B0%BC%E4%BA%9E%E5%85%B1%E5%92%8C%E5%9C%8B)的首都，它的旧城（[塔林历史城区](https://zh.wikipedia.org/w/index.php?title=%E5%A1%94%E6%9E%97%E6%AD%B7%E5%8F%B2%E5%9F%8E%E5%8D%80&action=edit&redlink=1)）被列入了世界遗产名录。从赫尔辛基出发乘船去塔林只需要短短2小时半，加上打折的船票，不到5欧就可以在一天内往返一趟塔林。
