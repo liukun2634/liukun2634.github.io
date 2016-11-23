@@ -1,6 +1,6 @@
 # Kun's Blog
 
-**[The live blog: kunliublog.tk](https://kunliublog.tk/)**.
+**[The live blog: kunliublog.tk](http://kunliublog.tk/)**.
 
 ## History
 
@@ -26,6 +26,6 @@ The blog used many tool/service,many thanks to:
 * [Duoshuo](http://duoshuo.com/), a socialization comments plugin.
 * [Google](http://google.com), the one who tell me how to make it.
 * [azeril](http://azeril.me/) the one whom I got the basic theme from.
-* [hux](https://huangxuan.me/) the one whom I got most of css style from.
+* [hux](http://huangxuan.me/) the one whom I got most of css style from.
 
 
