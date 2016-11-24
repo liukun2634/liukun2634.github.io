@@ -46,17 +46,17 @@ subtitle: 一个讲述皇宫与诺贝尔的老城
 
 <center><p><img src="../images/stockholm/4.jpg" align="center"></p></center>
 
-随后，我们从正门进皇室参观，一共是两层，一层展览的是服饰的一些内容。
+随后，我们从正门进皇室参观，一共是两层。
 
 先看一眼**皇宫的缩略图**
 
 <center><p><img src="../images/stockholm/5.jpg" align="center"></p></center>
 
-比如会有**教皇服饰**
+一层展览的是服饰的一些内容，比如会有**教皇服饰**，其他还有公主，骑士的服饰和勋章。
 
 <center><p><img src="../images/stockholm/6.jpg" align="center"></p></center>
 
-往二层上去，抬头就看见的**屋顶壁画**。
+去往二层的楼梯，抬头就看见的**屋顶壁画**。
 
 <center><p><img src="../images/stockholm/7.jpg" align="center"></p></center>
 
@@ -86,13 +86,13 @@ subtitle: 一个讲述皇宫与诺贝尔的老城
 
 诺贝尔博物馆就坐落在瑞典皇宫的旁边，里面会对阿尔弗雷德·诺贝尔有个生平的介绍，也会对诺奖的办法有着更多的细节的透露，当然还会有至今天为止的诺奖获得者和相应的成就的介绍。
 
-不多说，先拿一个诺奖走了。
-
-<center><p><img src="../images/stockholm/13.jpg" align="center"></p></center>
-
 一进门屋顶上面悬挂着每位获奖者的肖像照和获奖简介。
 
 <center><p><img src="../images/stockholm/14.jpg" align="center"></p></center>
+
+不多说，快拿一个诺奖跑。
+
+<center><p><img src="../images/stockholm/13.jpg" align="center"></p></center>
 
 莫言还被里面的导游专门提到了一下。
 
@@ -104,7 +104,7 @@ subtitle: 一个讲述皇宫与诺贝尔的老城
 
 除了皇宫和诺贝尔以为，老城还有很多更加好看的建筑。
 
-比如皇宫旁边的**瑞典国会**。
+皇宫旁边的**瑞典国会**。
 
 <center><p><img src="../images/stockholm/18.jpg" align="center"></p></center>
 
@@ -122,7 +122,7 @@ subtitle: 一个讲述皇宫与诺贝尔的老城
 
 <center><p><img src="../images/stockholm/19.jpg" align="center"></p></center>
 
-回去的船也是18小时左右，时区加一减一的完全就不会算时间了。等于两天的行程，基本也是在船上度过，不过是有热水可以洗澡的哦，舒舒服服洗了澡，又去了楼下的酒吧做了一会，听了同样的乐队同样的歌，不过两天气氛还是不错的。加上离别的时候，变得稍许的伤感。
+回去的船也是18小时左右，时区加一减一的完全就不会算时间了。等于两天的行程，基本也是在船上度过，不过是有热水可以洗澡的哦，舒舒服服洗了澡，又去了楼下的酒吧做了一会，听了同样的乐队同样的歌，气氛还是不错的。不过加上离别的时候，会有稍许的伤感。
 
 
 
