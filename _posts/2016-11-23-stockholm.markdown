@@ -4,6 +4,7 @@ title: "斯德哥尔摩 "
 categories: travel
 tag: Sweden 
 subtitle: 一个讲述皇宫与诺贝尔的老城
+header-img: "../images/stockholm/20.jpg"
 ---
 
 > 瑞典，第一个联想到的是伊布，然后就是瑞士了，一直以为是瑞士的邻居，其实还是有点距离的。其首都斯德哥尔摩位于瑞典的东海岸，濒[波罗的海](https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BD%97%E7%9A%84%E6%B5%B7)，[梅拉伦湖](https://zh.wikipedia.org/wiki/%E6%A2%85%E6%8B%89%E4%BC%A6%E6%B9%96)入海处，风景秀丽，是著名的旅游胜地，被誉为“北方威尼斯”。[瑞典王国政府](https://zh.wikipedia.org/wiki/%E7%91%9E%E5%85%B8%E6%94%BF%E5%BA%9C)、[国会](https://zh.wikipedia.org/wiki/%E7%91%9E%E5%85%B8%E8%AD%B0%E6%9C%83)以及[瑞典王室](https://zh.wikipedia.org/w/index.php?title=%E7%91%9E%E5%85%B8%E7%8E%8B%E5%AE%A4&action=edit&redlink=1)的[官方宫殿](https://zh.wikipedia.org/wiki/%E6%96%AF%E5%BE%B7%E5%93%A5%E7%88%BE%E6%91%A9%E7%8E%8B%E5%AE%AE)都设在斯德哥尔摩。斯德哥尔摩也是[阿尔弗雷德·诺贝尔](https://zh.wikipedia.org/wiki/%E9%98%BF%E5%B0%94%E5%BC%97%E9%9B%B7%E5%BE%B7%C2%B7%E8%AF%BA%E8%B4%9D%E5%B0%94)的故乡。从1901年开始，每年12月10日诺贝尔逝世纪念日，斯德哥尔摩音乐厅举行隆重仪式，[瑞典国王](https://zh.wikipedia.org/wiki/%E7%91%9E%E5%85%B8%E5%9B%BD%E7%8E%8B)亲自给获[诺贝尔奖](https://zh.wikipedia.org/wiki/%E8%AF%BA%E8%B4%9D%E5%B0%94%E5%A5%96)者授奖，并在市政厅举行晚宴。

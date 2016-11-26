@@ -4,6 +4,7 @@ title: "初到芬兰 "
 categories: travel
 tag: Finland 
 subtitle: "喜欢一个城市其实只需要一秒 "
+header-img: "../images/1.jpg"
 ---
 
 

@@ -4,6 +4,7 @@ title: "奥兰群岛"
 categories: travel
 tag: Finland 
 subtitle: 这个群岛已经被你承包了
+header-img: "../images/Aland/16.jpg"
 ---
 
 > 奥兰群岛是位于[波罗的海](https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%BE%85%E7%9A%84%E6%B5%B7)、[波的尼亚湾](https://zh.wikipedia.org/wiki/%E6%B3%A2%E7%9A%84%E5%B0%BC%E4%BA%9E%E7%81%A3)入口处的一个群岛，也是[芬兰](https://zh.wikipedia.org/wiki/%E8%8A%AC%E5%85%B0)的一个自治区，官方语言是[瑞典语](https://zh.wikipedia.org/wiki/%E7%91%9E%E5%85%B8%E8%AF%AD)。首府[玛丽港](https://zh.wikipedia.org/wiki/%E7%8E%9B%E4%B8%BD%E6%B8%AF)是全区的最大城市。

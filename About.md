@@ -21,10 +21,6 @@ header-img: "img/autumn.jpg"
 
 <p align="right">——刘琨</p>
 
-> 与我联系
-
-可以通过页面下方各种账号与我联系，也可以联系我的邮箱：kaka2634@bupt.edu.cn
-
 <center>
 
     <p><img src="img/hacker.png" align="center"></p>
