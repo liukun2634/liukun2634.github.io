@@ -1,143 +1,26 @@
 ---
 layout: post
-title:  "NS3笔记"
+title: NS3 教程
 categories: study
-tag: routing
+tag: ns3
+subtitle: "写出你的第一个ns3脚本"
+header-img: "../images/ns3/1.jpg"
 ---
 
-* content
-{:toc}
+
+>依据ns3 Tutorial给与的second.cc文件，参考Doxygen API文档，写出第一个以CSMA框架上的数据发送与接收，目的是了解整个测试文件的整体结构以及如何根据文档来使用ns3提供API接口。
 
 
+## 查询技巧
 
++ 搜索很有用
++ 关键词查找
++ 看到有help首先点，
++ 类中的说明很重要。
 
-# NS3
+## 总体组成部分
 
-## 1.安装NS3
-
-安装参考<https://www.nsnam.org/docs/tutorial/html/getting-started.html>
-
-相关的依赖安装：<https://www.nsnam.org/wiki/Installation>
-
-遇到问题与解决：
-
-1.测试生成module出错，重新clean再build一下（时间较长，需要之后修改方法）
-
-2.virtualize安装相关依赖仍然disable：需要选择对应的pyhon2.7版本，参考<http://stackoverflow.com/questions/19256127/two-versions-of-python-on-linux-how-to-make-2-7-the-default>
-
-## 2.使用ns3图形界面
-
-使用AODV example
-
-```
-cd Desktop/workspace/ns-allinone-3.26/ns-3.26/
- ./waf --run aodv --vis
-```
-
-## 3.使用PCAP tracing
-
-参考文档，[pointToPoint](https://www.nsnam.org/docs/release/3.26/doxygen/classns3_1_1_point_to_point_helper.html#abe3ce49bfc07a9d40cead59b508b9c3e)实现了虚类[PcapHelperForDevice](https://www.nsnam.org/docs/release/3.26/doxygen/classns3_1_1_pcap_helper_for_device.html),所以可以使用PcapHelperForDevice类的成员函数EnablePcapAll();
-
-```
-pointToPoint.EnablePcapAll ("myfirst");
-```
-
-所以这句需要放在devices生成之后，否则没有devices，那么就没有pcap文件生成。
-再使用
-
-```
-tcpdump -nn -tt -r myfirst-0-0.pcap
-```
-
-就够测试pcap文件了。
-
-## 4.gpsr下载的文件使用
-
-文件来源：[http://www.mehic.info/2016/04/greedy-perimeter-stateless-routing-gpsr-in-ns3-25/ ](http://www.mehic.info/2016/04/greedy-perimeter-stateless-routing-gpsr-in-ns3-25/)
-
-打开/src/gpsr/model/gpsr.cc文件，根据终端运行时错误提示, 通过find找到GetypeId方法，去掉PerimeterMode后的空格
-
-```
-TypeId
-RoutingProtocol::GetTypeId (void)
-{
-  static TypeId tid = TypeId ("ns3::gpsr::RoutingProtocol")
-    .SetParent<Ipv4RoutingProtocol> ()
-    .AddConstructor<RoutingProtocol> ()
-    .AddAttribute ("HelloInterval", "HELLO messages emission interval.",
-                   TimeValue (Seconds (1)),
-                   MakeTimeAccessor (&RoutingProtocol::HelloInterval),
-                   MakeTimeChecker ())
-    .AddAttribute ("LocationServiceName", "Indicates wich Location Service is enabled",
-                   EnumValue (GPSR_LS_GOD),
-                   MakeEnumAccessor (&RoutingProtocol::LocationServiceName),
-                   MakeEnumChecker (GPSR_LS_GOD, "GOD",
-                                    GPSR_LS_RLS, "RLS"))
-    .AddAttribute ("PerimeterMode", "Indicates if PerimeterMode is enabled",
-                   BooleanValue (false),
-                   MakeBooleanAccessor (&RoutingProtocol::PerimeterMode),
-                   MakeBooleanChecker ())
-  ;
-  return tid;
-}
-```
-
-其中源文件Attribute"PerimeterMode"末尾有空格.
-
-不能一起把包含test的example文件放入scratch目录下，把7个test文件分别都拷贝在scratch文件目录下。
-
-```
-./waf
-./waf --run scratch/gpsr-test1 #不需要.cc后缀名
-```
-
-## 5.建立新的module
-
-首先进入根目录下的src文件夹中，利用create-module.py 新建你自己的module。
-
-```
-$./create-module.py new-module-name#可以取任何不重复之前module的名字
-```
-
-就会在src目录下产生module模板:
-
-```
-src/
-      module-name/
-              bindings/
-              doc/
-              examples/
-                      wscript
-              helper/
-              model/
-              test/
-                      examples-to-run.py
-              wscript
-```	
-
-之后需要增加修改自己定义的文件，并在wscipt中增加的文件和需要已有module的绑定。
-
-参考文章：
-
-[creat new module 1](https://github.com/shinglyu/ns3-h264-svc/blob/master/doc/manual/source/new-modules.rst)
-
-[creat new module 2 博主有回复问题](https://ns3programming.blogspot.fi/2016/08/creating-user-defined-module-in-ns3.html)
-
-[creat new module 3](https://www.nsnam.org/docs/release/3.11/manual/html/new-modules.html)
-
-[ns3官网新建model，注意是model](https://www.nsnam.org/docs/manual/html/new-models.html)
-
-## 6.First NS3 test script
-
-依据ns3 Tutorial给与的second.cc文件，参考Doxygen API文档，写出第一个以CSMA框架上的数据发送与接收，目的是了解整个测试文件的整体结构以及如何根据文档来使用ns3提供API接口。
-
-ns3文档的技巧：
-搜索很有用，
-关键词查找，
-看到有help首先点，
-类中的说明很重要。
-
-#### 总体组成部分
+文档总体以下几个组成部分：
 
 1. Node(NodeContainer)：简单产生节点的个数
 
@@ -151,7 +34,7 @@ ns3文档的技巧：
 
 6. others：包括头文件,LOG,cmd,PCAP和 simultator几个部分。
 
-#### 头文件
+## 头文件
 
 ```
 #include "ns3/core-module.h"
@@ -161,7 +44,7 @@ ns3文档的技巧：
 #include "ns3/applications-module.h"
 ```
 
-**写所需头文件的方法**：在Doxygen文档中找到 (右上方搜索关键词) 需要使用类所在的module模块总名称，在头文件中添加#include “ns3/模块名称-module.h”就可以了。
+**引入必须头文件的方法**：在Doxygen文档中找到 (右上方搜索关键词) 需要使用类所在的module模块总名称，在头文件中添加#include “ns3/模块名称-module.h”就可以了。
 
 说明：
 
@@ -171,7 +54,7 @@ ns3文档的技巧：
 
 3.  csma，internet，network和application正是几个关键部分的module，可在写文档时，需要时候就增加在头文件中。
 
-#### 命名空间
+## 命名空间
 
 ```
 using namespace ns3;
@@ -179,7 +62,7 @@ using namespace ns3;
 
 命名空间使用ns3，类似std，之后文档就不需要使用"ns3::"，个别module中会可能引入新的命名空间。
 
-#### 主函数
+## 主函数
 
 ```
 int 
@@ -188,7 +71,7 @@ main (int argc, char *argv[])
 }
 ```
 
-#### Node
+## Node
 
 参看Doxygen文档的[NodeContainer ](https://www.nsnam.org/doxygen/classns3_1_1_node_container.html)
 
@@ -199,7 +82,7 @@ nodes.Create(2);
 
 先新建NodeContainer类的对象，再使用Create (uint32_t n) 方法建立节点。这样建立的节点对象没有任何配置，需要在后面为之配置。
 
-#### Channel and Devices（CSMA）
+## Channel and Devices（CSMA）
 
 既然要基于CSMA的框架上传送数据，那么在Doxygen上搜索Csma，一般先看有没有helper，helper一般是为了建立对象而准备的。搜索到csmahelper ns3点击，参看[CsmaHelper](https://www.nsnam.org/doxygen/classns3_1_1_csma_helper.html)，它是结果就是产生节点的NetDeviceContainer (写的是a set of CsmaNetDevice，但是install返回是NetDeviceContainer，因而NetDeviceContainer包含一系列的CsmaNetDevice)。
 
@@ -229,7 +112,7 @@ csmaNetDevice=csmaNode.Install(nodes);
 这里NetDeviceContainer对象csmaNetDevice为后面分配addres作链接
 **整个使用连接线：Node->NetDevice（前提配置channel）->AddressInteface(前提配置stack和addres)->ClientHelp**。
 
-#### Internet
+## Internet
 
 Internet包括三个部分：Stack、Address和 Interface。
 
@@ -262,7 +145,7 @@ Ipv4InterfaceContainer ipv4InterfaceContainer;
 ipv4InterfaceContainer=ipv4AddressHelper.Assign(csmaNetDevice);
 ```
 
-#### Application
+## Application
 
 [Application](https://www.nsnam.org/doxygen/group__applications.html)主要包括server和client两个部分。先设置Application 使用的协议(Udp/TCP等)，这里使用Udp
 
@@ -311,7 +194,7 @@ clientApps.Start (Seconds (2.0));
 clientApps.Stop (Seconds (10.0));
 ```
 
-#### Routing
+## Routing
 
 使用ipv4协议栈的简单路由策略[Ipv4GlobalRoutingHelper](https://www.nsnam.org/doxygen/classns3_1_1_ipv4_global_routing_helper.html)。
 ```
@@ -319,7 +202,7 @@ Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
 ```
 Ipv4GlobalRoutingHelper这里没有新建对象,所以直接用"::"访问方法函数PopulateRoutingTables ()产生一个routing database并初始化路由表。
 
-#### Simulator
+## Simulator
 
 通过[Simulator](https://www.nsnam.org/doxygen/classns3_1_1_simulator.html)开始与结束仿真。
 
@@ -329,7 +212,7 @@ Simulator::Destroy ();
 ```
 Simulator是core module中的类，这里没有新建对象,所以直接用"::"访问方法函数。
 
-#### 运行
+## 运行
 
 拷贝文件到scratch 目录下,进入ns根目录，终端输入
 
