@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NS3 教程
+title: NS3教程
 categories: study
 tag: ns3
 subtitle: "你的第一个ns3仿真脚本"
