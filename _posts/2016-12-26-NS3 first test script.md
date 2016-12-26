@@ -3,7 +3,7 @@ layout: post
 title: NS3 教程
 categories: study
 tag: ns3
-subtitle: "写出你的第一个ns3脚本"
+subtitle: "你的第一个ns3仿真脚本"
 header-img: "../images/ns3/1.jpg"
 ---
 
