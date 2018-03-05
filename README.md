@@ -1,6 +1,6 @@
 # Kun's Blog
 
-**[The live blog: kunliublog.tk](http://kunliublog.tk/)**.
+**[The live blog: kunliu.tk](http://kunliu.tk/)**.
 
 ## History
 
