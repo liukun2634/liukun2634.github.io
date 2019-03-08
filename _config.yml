@@ -1,15 +1,15 @@
 # Site settings
 title: Kun's Blog
 header-img: "img/elephant.jpg"
-tagline: "say something"  
-description: "Be better"  
+tagline: "say something"
+description: "Be better"
 keyword: "刘琨，刘琨的博客，kunliublog，通信，芬兰，游记，git，Jekyll，车联网，路由"
 baseurl: ""
-url: "http://kunliublog.tk/"  
+url: "http://kunliublog.tk/"
 #url: "http://localhost:4000"
 
 # About/contact
-owner: 
+owner:
   name: "KunLiu"
   email: 996529090@qq.com
   bio: "mid or feed"
@@ -19,21 +19,21 @@ gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.png
 
 douban_username: none
-twitter_username: liukun2634 
-github_username: kaka2634  
+twitter_username: liukun2634
+github_username: kaka2634
 facebook_username: kun.liu.5099940
 weibo_username: 3509237361
 zhihu_username: liukun-21
 
-# Build settings  
-# use Github Flavored Markdown !important  
-# document: http://jekyllrb.com/docs/configuration/#kramdown  
+# Build settings
+# use Github Flavored Markdown !important
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
   input: GFM
 highlighter: rouge
 
-gems: 
+gems:
 #- jekyll-gallery-generator
 - jekyll-paginate
 permalink: none
@@ -49,7 +49,7 @@ timezone: Asia/Beijing
 # Defaults for posts
 defaults:
   -
-    scope: 
+    scope:
       path: ""
       type: "posts"
     values:
@@ -58,13 +58,13 @@ defaults:
       header-img: "img/mountain.jpg" # We don't want posts without a header image, that whould mean white on white
 
 
-# Comments 
+# Comments
 comments :
   provider : duoshuo
   duoshuo :
     short_name : liukun
   disqus :
-      short_name : none
+    short_name : none
 
 # Analytics and webmaster tools stuff goes here
 google_analytics: UA-87821158-1
