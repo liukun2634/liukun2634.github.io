@@ -1,6 +1,6 @@
 # Kun's Blog
 
-**The live blog: [kaka2634.github.io](kaka2634.github.io)**.
+**The live blog: [kaka2634.github.io](https://kaka2634.github.io)**.
 
 ## History
 
