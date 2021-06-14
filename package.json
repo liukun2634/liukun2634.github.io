@@ -18,5 +18,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/kaka2634/kaka2634.github.io.git"
+    },
+    "scripts": {
+        "start": "bundle exec jekyll serve"
     }
 }
