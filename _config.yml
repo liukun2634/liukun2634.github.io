@@ -6,13 +6,6 @@ baseurl: ""
 url: "http://kaka2634.github.io"
 #url: "http://localhost:4000"
 
-#Jekyll sitemap： https://github.com/jekyll/jekyll-sitemap
-#Jekyll feed: https://github.com/jekyll/jekyll-feed
-#sitemap.xml and feed.xml will generate on _site
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-
   # About/contact
 owner:
   name: "KunLiu"
@@ -20,7 +13,6 @@ owner:
 
 # Data
 favicon: img/favicon.png
-
 twitter_username: liukun2634
 github_username: kaka2634
 facebook_username: kun.liu.5099940
@@ -35,13 +27,21 @@ kramdown:
   input: GFM
 highlighter: rouge
 
-gems:
+
+#Jekyll plugins
+#Jekyll sitemap： https://github.com/jekyll/jekyll-sitemap
+#Jekyll feed: https://github.com/jekyll/jekyll-feed
+#sitemap.xml and feed.xml will generate on _site
+plugins:
 #- jekyll-gallery-generator
 - jekyll-paginate
+- jekyll-feed
+- jekyll-sitemap
 permalink: none
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
+#Timezone
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone: Asia/Shanghai
 
