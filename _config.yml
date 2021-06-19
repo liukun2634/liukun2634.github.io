@@ -38,8 +38,15 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone: Asia/Shanghai
 
-# Title
-
+# Comments 
+# gittalk
+gitalk:
+   enable: true
+   owner: kaka2634
+   repo: kaka2634.github.io
+   clientID: 6bb1012855494cd52cf1
+   clientSecret: a9826856075b6f68f11033a68bc9a793fd27f736
+   admin: kaka2634
 
 # Defaults for posts
 defaults:
