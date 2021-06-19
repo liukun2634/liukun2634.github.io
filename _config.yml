@@ -1,9 +1,7 @@
 # Site settings
 title: Kun's Blog
 header-img: "img/elephant.jpg"
-tagline: "say something"
-description: "Be better"
-keyword: "刘琨，刘琨的博客，kunliublog，通信，芬兰，游记，git，Jekyll，车联网，路由"
+description: "Kun's blog"
 baseurl: ""
 url: "http://kaka2634.github.io"
 #url: "http://localhost:4000"
@@ -12,13 +10,10 @@ url: "http://kaka2634.github.io"
 owner:
   name: "KunLiu"
   email: 996529090@qq.com
-  bio: "mid or feed"
 
 # Data
-gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.png
 
-douban_username: none
 twitter_username: liukun2634
 github_username: kaka2634
 facebook_username: kun.liu.5099940
