@@ -5,6 +5,7 @@ categories: study
 tag: 数组 
 subtitle: "就从这个分析开始总结更多技术知识"
 mathjax: true
+comment: true
 ---
 
 ##  预热问题

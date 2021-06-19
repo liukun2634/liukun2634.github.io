@@ -62,7 +62,7 @@ layout: default
                 </ul>
 
                 <!--增加gittalk评论系统-->
-                {% unless page.no-comments %}
+                {% if page.comment %}
                 <div>
                     <div id="gitalk-container"></div>
                     <link rel="stylesheet" href="{{ '/css/gitalk.css' | prepend: site.baseurl }}">
@@ -81,7 +81,7 @@ layout: default
                         gitalk.render('gitalk-container')
                     </script>
                 </div>
-                {% endunless %}
+                {% endif %}
 
             </div>
             <!-- Side Catalog Container -->

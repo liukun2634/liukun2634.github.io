@@ -5,6 +5,7 @@ categories: study
 tag: Ubuntu 
 subtitle: "好看的界面上编程一定事半功倍"
 header-img: "../images/ubuntu/1.jpg"
+comment: true
 ---
 
 
