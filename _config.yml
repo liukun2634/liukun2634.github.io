@@ -6,7 +6,14 @@ baseurl: ""
 url: "http://kaka2634.github.io"
 #url: "http://localhost:4000"
 
-# About/contact
+#Jekyll sitemap： https://github.com/jekyll/jekyll-sitemap
+#Jekyll feed: https://github.com/jekyll/jekyll-feed
+#sitemap.xml and feed.xml will generate on _site
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+  # About/contact
 owner:
   name: "KunLiu"
   email: 996529090@qq.com
@@ -67,3 +74,4 @@ google_verify:
 bing_verify:
 
 # Links to include in footer navigation
+

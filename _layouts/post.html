@@ -69,7 +69,7 @@ layout: default
                     <script src="{{ '/js/gitalk.min.js' | prepend: site.baseurl }}"></script>
                     <script>
                         var gitalk = new Gitalk({
-                            id: '{{page.date}}',
+                            id: '{{page.title}}',
                             clientID: '{{site.gitalk.clientID}}',
                             clientSecret: '{{site.gitalk.clientSecret}}',
                             repo: '{{site.gitalk.repo}}',      // The repository of store comments,
