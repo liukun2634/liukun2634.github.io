@@ -19,10 +19,11 @@ Download and install base on your OS: <https://jekyllrb.com/docs/>
 3. Run `bundle install` to install dependency 
 4. Run `bundle exec jekyll serve` to run locally
 
-#### Build project locally
+#### Build & Develop project locally
 1. Install node js
 2. Run `npm install`
 3. Run `npm install -g grunt-cli`
-4. build project by `grunt`
+4. Run `grunt`
+5. open a new teminal window and run `npm run start`
 
 

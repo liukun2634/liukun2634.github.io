@@ -56,7 +56,7 @@
     overflow: auto;
     height: 100%;
     padding-bottom: 40px;
-    width: 195px;
+    width: 200px;
 }
 
 .side-catalog.fixed {
@@ -100,7 +100,7 @@
 }
 .side-catalog .catalog-body .h3_nav {
     margin-left: 10px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -156,8 +156,12 @@ h6 {
     font-weight: bold;
 }
 
-h4 {
+h3 {
     font-size: 21px;
+}
+
+h4 {
+    font-size: 18px;
 }
 
 a {
@@ -283,10 +287,6 @@ pre code {
     margin-top: 5px;
 }
 
-.post-container ul,
-.post-container ol {
-    margin-bottom: 40px;
-}
 
 @media screen and (max-width: 768px) {
     .post-container ul,
