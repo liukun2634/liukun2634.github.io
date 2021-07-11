@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 二叉搜索树的学习总结
+title: 二叉搜索树
 categories: study
 tags: [数据结构, 二叉搜索树]
 subtitle: "继续来看特殊的二叉树"

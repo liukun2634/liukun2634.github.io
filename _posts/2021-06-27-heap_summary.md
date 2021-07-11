@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 二叉堆的学习总结
+title: 二叉堆
 categories: study
 tags: [数据结构, 堆]
 subtitle: "一种特殊的完全二叉树"
