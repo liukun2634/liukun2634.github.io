@@ -3,8 +3,9 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    
+<header class="intro-header"
+    style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -20,10 +21,22 @@ layout: default
 
 <!-- Main Content -->
 <div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			{{ content }}
-		</div>
-	</div>
-</div>
+    <div class="row">
+        <!-- Postlist container -->
 
+        <!-- Sidebar container -->
+        {% if page.sidebar-intro %}
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 postlist-container">
+            {{ content }}
+        </div>
+        <div
+            class="col-lg-3 col-lg-offset-0 visible-lg-block col-md-3 col-md-offset-0 visible-md-block sidebar-container">
+            {% include sidebar-intro.html %}
+        </div>
+        {% else %}
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 postlist-container">
+            {{ content }}
+        </div>
+        {% endif %}
+    </div>
+</div>

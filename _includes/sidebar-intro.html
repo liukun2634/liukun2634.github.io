@@ -1,0 +1,25 @@
+<!-- sidebar for blog brief introduction -->
+<div class="sidebar-intro">
+    <section>
+        <h5><a href="/5-tags.html">FEATURE TAGS</a></h5>
+        <div class="tags">
+            {% for tag in site.tags %}
+            <a href="{{ site.baseurl }}/5-tags.html?tag={{ tag[0] | url_encode }}" title="{{ tag[0] }}"
+                rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <hr>
+        <h5><a href="/2-about.html">ABOUT ME</a></h5>
+        <div class="short-about">
+            你好，我叫刘琨，现在是一名软件工程师，主要从事网站的开发工作。
+        </div>
+        {% include sns-links.html %}
+    </section>
+    <!-- <section>
+    <hr>
+    <h5><a>FRIENDS</a></h5>
+</section> -->
+</div>

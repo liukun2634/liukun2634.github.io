@@ -11,7 +11,7 @@ layout: default
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-Smd-10 col-md-offset-1">
+            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-2">
                 <div class="post-heading">
                     <div class="tags">
                         {% for tag in page.tags %}
@@ -34,7 +34,7 @@ layout: default
 <article>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+            <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-2 post-container">
                 {{ content }}
                 <hr>
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
@@ -85,15 +85,8 @@ layout: default
 
             </div>
             <!-- Side Catalog Container -->
-            <div class="col-lg-2 col-lg-offset-0 visible-lg-block sidebar-container catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <div class="catalog-title">
-                        <img class="catalog-icon" src="/images/icon/open-book.png" />
-                        <b>文章目录</b>
-                    </div>
-                    <ul class="catalog-body"></ul>
-                </div>
+            <div class="col-lg-2 col-lg-offset-0 visible-lg-block sidebar-container">
+                {% include sidebar-catalog.html %}
             </div>
         </div>
     </div>

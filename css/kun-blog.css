@@ -5,132 +5,7 @@
 * Hux blog: https://github.com/Huxpro/huxpro.github.io/
 */
 
-@media (min-width: 1200px) {
-    .post-container,
-    .sidebar-container {
-        padding-right: 5%;
-    }
-}
 
-@media (min-width: 768px) {
-    .post-container {
-        padding-right: 5%;
-    }
-}
-
-.sidebar-container {
-    color: #bfbfbf;
-    font-size: 14px;
-}
-
-
-
-.sidebar-container .catalog-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.sidebar-container .catalog-title {
-    color: #a3a3a3;
-    padding-bottom: 1em;
-}
-
-.sidebar-container a {
-    color: #bfbfbf !important;
-}
-
-.sidebar-container a:hover,
-.sidebar-container a:active {
-    color: #0085a1 !important;
-}
-
-
-.catalog-container {
-    padding: 0px;
-}
-
-.side-catalog {
-    display: block;
-    overflow: auto;
-    height: 100%;
-    padding-bottom: 40px;
-    width: 200px;
-}
-
-.side-catalog.fixed {
-    position: fixed;
-    top: -21px;
-}
-
-
-.side-catalog .catalog-body {
-    position: relative;
-    list-style: none;
-    height: auto;
-    overflow: hidden;
-    padding-left: 0px;
-    padding-right: 5px;
-    text-indent: 0;
-}
-
-.side-catalog .catalog-body li {
-    position: relative;
-    list-style: none;
-}
-
-.side-catalog .catalog-body li a {
-    padding-left: 10px;
-    max-width: 180px;
-    vertical-align: middle;
-    height: 30px;
-    line-height: 30px;
-    overflow: hidden;
-    text-decoration: none;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.side-catalog .catalog-body .h1_nav,
-.side-catalog .catalog-body .h2_nav {
-    margin-left: 0;
-    font-size: 14px;
-    font-weight: bold;
-}
-.side-catalog .catalog-body .h3_nav {
-    margin-left: 10px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.side-catalog .catalog-body .h4_nav,
-.side-catalog .catalog-body .h5_nav,
-.side-catalog .catalog-body .h6_nav {
-    margin-left: 20px;
-    font-size: 12px;
-}
-
-.side-catalog .catalog-body .h4_nav a,
-.side-catalog .catalog-body .h5_nav a,
-.side-catalog .catalog-body .h6_nav a {
-    max-width: 170px;
-}
-
-.side-catalog .catalog-body .active {
-    border-radius: 4px;
-    background-color: #F5F5F5;
-}
-
-.side-catalog .catalog-body .active a {
-    color: #0085a1!important;
-}
-
-@media (max-width: 1200px) {
-    .side-catalog {
-        display: none;
-    }
-}
 
 body {
     font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
@@ -344,6 +219,163 @@ pre code {
     color: #808080;
     font-weight: normal;
     letter-spacing: 0.5px;
+}
+
+.post-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em auto 1.6em auto;
+}
+
+
+@media (min-width: 1200px) {
+    .post-container,
+    .sidebar-container {
+        padding-right: 5%;
+    }
+}
+
+@media (min-width: 768px) {
+    .post-container {
+        padding-right: 5%;
+    }
+}
+
+/* sidebar-container */
+.sidebar-container {
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+.sidebar-container a {
+    color: #bfbfbf !important;
+}
+
+.sidebar-container a:hover,
+.sidebar-container a:active {
+    color: #0085a1 !important;
+}
+
+
+
+/* sidebar-intro*/
+.sidebar-intro {
+    margin-top: 30px;
+}
+
+.sidebar-intro .tags a {
+    border-color: #bfbfbf;
+}
+
+.sidebar-intro .tags a:hover,
+.sidebar-intro .tags a:active {
+    border-color: #0085a1 !important;
+}
+
+.sidebar-intro  .short-about {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* sidebar-catalog*/
+.sidebar-catalog .catalog-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidebar-catalog .catalog-title {
+    color: #a3a3a3;
+    padding-bottom: 1em;
+}
+
+
+
+.sidebar-catalog {
+    padding: 0px;
+    display: block;
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 40px;
+    width: 200px;
+}
+
+
+
+.sidebar-catalog.fixed {
+    position: fixed;
+    top: -21px;
+}
+
+
+.sidebar-catalog  .catalog-body {
+    position: relative;
+    list-style: none;
+    height: auto;
+    overflow: hidden;
+    padding-left: 0px;
+    padding-right: 5px;
+    text-indent: 0;
+}
+
+.sidebar-catalog .catalog-body li {
+    position: relative;
+    list-style: none;
+}
+
+.sidebar-catalog .catalog-body li a {
+    padding-left: 10px;
+    max-width: 180px;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-catalog .catalog-body .h1_nav,
+.sidebar-catalog .catalog-body .h2_nav {
+    margin-left: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.sidebar-catalog .catalog-body .h3_nav {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sidebar-catalog .catalog-body .h4_nav,
+.sidebar-catalog .catalog-body .h5_nav,
+.sidebar-catalog .catalog-body .h6_nav {
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.sidebar-catalog .catalog-body .h4_nav a,
+.sidebar-catalog .catalog-body .h5_nav a,
+.sidebar-catalog .catalog-body .h6_nav a {
+    max-width: 170px;
+}
+
+.sidebar-catalog .catalog-body .active {
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.sidebar-catalog .catalog-body .active a {
+    color: #0085a1!important;
+}
+
+@media (max-width: 1200px) {
+    .sidebar-catalog {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -692,6 +724,10 @@ footer {
     padding: 50px 0 65px;
 }
 
+footer .sns-links-container {
+    text-align: center;
+}
+
 footer .list-inline {
     margin: 0;
     padding: 0;
@@ -888,7 +924,6 @@ img::-moz-selection {
 .tags a:active,
 .tags .tag:active {
     color: white;
-    border-color: white;
     background-color: rgba(255, 255, 255, 0.4);
     text-decoration: none;
 }
@@ -965,12 +1000,7 @@ img::-moz-selection {
     }
 }
 
-.post-container img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 1.5em auto 1.6em auto;
-}
+
 
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {

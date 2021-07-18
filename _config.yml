@@ -6,16 +6,15 @@ baseurl: ""
 url: "https://kaka2634.github.io"
 #url: "http://localhost:4000"
 
-  # About/contact
+# About/contact
 owner:
   name: "KunLiu"
   email: 996529090@qq.com
 
 # Data
 favicon: img/favicon.png
-twitter_username: liukun2634
+avatar: img/kun.png
 github_username: kaka2634
-facebook_username: kun.liu.5099940
 weibo_username: 3509237361
 zhihu_username: liukun-21
 
