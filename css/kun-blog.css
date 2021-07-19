@@ -264,6 +264,8 @@ pre code {
     margin-top: 30px;
 }
 
+
+
 .sidebar-intro .tags a {
     border-color: #bfbfbf;
 }
@@ -273,9 +275,15 @@ pre code {
     border-color: #0085a1 !important;
 }
 
-.sidebar-intro  .short-about {
+.sidebar-intro .short-about {
     margin-top: 0;
     margin-bottom: 20px;
+}
+
+.sidebar-intro .short-about img{
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 30px;
 }
 
 
@@ -1001,6 +1009,7 @@ img::-moz-selection {
 }
 
 
+/* navbar */
 
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {

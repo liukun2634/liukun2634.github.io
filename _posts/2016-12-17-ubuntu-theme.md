@@ -2,7 +2,7 @@
 layout: post
 title: "如何让你的Ubuntu赏心悦目 "
 categories: study
-tag: Ubuntu 
+tag: ubuntu 
 subtitle: "好看的界面上编程一定事半功倍"
 header-img: "../images/ubuntu/1.jpg"
 comment: true
