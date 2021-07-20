@@ -12,8 +12,8 @@ owner:
   email: 996529090@qq.com
 
 # Data
-favicon: img/favicon.png
-avatar: img/kun.png
+favicon: /img/favicon.png
+avatar: /img/kun.png
 github_username: kaka2634
 weibo_username: 3509237361
 zhihu_username: liukun-21

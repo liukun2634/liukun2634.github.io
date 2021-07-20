@@ -21,7 +21,7 @@ comment: true
 
 比如下面的二叉树(节点集={1,2,3,4,5,6,7})就是组成了一个二叉搜索树。
 
-![img1](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/binary_search_tree/img1.png)
+![img1](/img/binary_search_tree/img1.png)
 
 从图中可以发现两点：
 - 如果对二叉搜索树进行中序遍历，得到{1,2,3,4,5,6,7}，发现是有序的。这正是二叉搜索树的性质决定的。可以通过中序遍历是否有序来判断二叉树是不是二叉搜索树，当然也可以基于性质递归判断。
@@ -34,7 +34,7 @@ comment: true
 
 出现最坏情况的原因是，比方同样对于节点集={1,2,3,4,5,6,7}。如果按照这个顺序插入，那么二叉树将退化成为链表，时间复杂度自然退化为 $O(n)$。
 
-![img2](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/binary_search_tree/img2.png)
+![img2](/img/binary_search_tree/img2.png)
 
 为了保证二叉搜索树操作的时间复杂度稳定为 $O(log­n)$，那么就需要一些额外的平衡操作来避免树退化成链表，这就有一些自平衡搜索树出现了，比如AVL树，红黑树。后面将会介绍这些树是如何通过平衡操作，来达到二叉搜索树的自平衡的。
 

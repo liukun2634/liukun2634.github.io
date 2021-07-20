@@ -16,9 +16,9 @@ comment: true
 - 一定是一个二叉搜索树
 - **每个节点的左子树和右子树的高度差至多为1**
 
-![img5](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/avl_tree/img5.png)
+![img5](/img/avl_tree/img5.png)
 
-![img6](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/avl_tree/img6.png)
+![img6](/img/avl_tree/img6.png)
 
 因为树的高度是平衡的，避免了一般二叉搜索树退化成链表的情况，所以AVL树的查找、插入和删除在平均和最坏情况下的时间复杂度都是$O(logn)$。
 
@@ -30,7 +30,7 @@ comment: true
 
 在节点结构上，AVL树增加了`height`的属性，表示各节点具有的高度。这里节点的初始高度为1，主要是因为创建的节点一开始均为叶子节点，而叶子节点的高度就是1。
 
-```
+```cpp
 template <class K, class V>
 class Node {
 public:
@@ -54,7 +54,7 @@ public:
 
 AVL树的基本接口增加了平衡操作，主要通过四种旋转来实现，包括两种单旋转和两种双旋转。
 
-``` 
+``` cpp
 template <class K, class V>
 class AVLTree {
 
@@ -98,13 +98,13 @@ class AVLTree {
 AVL树中的节点的高度就等于其左孩子和右孩子树高的最大值加1。
 
 对于节点P的高度就是:
-```
+```cpp
 p->height = max(get_height(p->left), get_height(p->right)) + 1;
 ```
 
 其中`get_height()`是用来获取节点高度。没有直接使用`p->height`的原因是针对null节点没有`height`属性的情况，令其直接返回为0。 
 
-```
+```cpp
 template <class K, class V>
 int AVLTree<K, V>::get_height(Node<K, V>* p)
 {
@@ -148,11 +148,11 @@ int AVLTree<K, V>::get_height(Node<K, V>* p)
 2. 将原来子树根节点P降为C的右孩子
 3. 将原来C的右子树CR更换为P的左子树
 
-![img1](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/avl_tree/img1.png)
+![img1](/img/avl_tree/img1.png)
 
 实现上，由于指针赋值关系，实际指针赋值顺序正好与前面陈述旋转的顺序相反。同时，在更新时候也要更新相应节点的高度。
 
-```
+```cpp
 //向右旋转
 template <class K, class V>
 Node<K, V>* AVLTree<K, V>::rotate_right(Node<K, V>* p)
@@ -187,11 +187,11 @@ Node<K, V>* AVLTree<K, V>::LL_rotate(Node<K, V>* p)
 2. 将原来子树根节点P降为C的左孩子
 3. 将原来C的左子树CL更换为P的右子树
 
-![img2](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/avl_tree/img2.png)
+![img2](/img/avl_tree/img2.png)
 
 与右单旋转一样，由于指针赋值关系，实际指针赋值顺序正好与前面陈述旋转的顺序相反。同时，在更新时候也要更新相应节点的高度。
 
-```
+```cpp
 //向左旋转
 template <class K, class V>
 Node<K, V>* AVLTree<K, V>::rotate_left(Node<K, V>* p)
@@ -227,11 +227,11 @@ Node<K, V>* AVLTree<K, V>::RR_rotate(Node<K, V>* p)
 1. 先以C为子树根节点，向左旋转，使得P子树成为LL型不平衡
 2. 再以P为子树根节点，向右旋转，新的子树达到平衡
 
-![img3](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/avl_tree/img3.png)
+![img3](/img/avl_tree/img3.png)
 
 实现上，就是调用两次单旋转。注意要将返回的节点要用于更新新的子树根节点。
 
-```
+```cpp
 //LR型 (先向左后向右双旋转)
 template <class K, class V>
 Node<K, V>* AVLTree<K, V>::LR_rotate(Node<K, V>* p)
@@ -249,11 +249,11 @@ Node<K, V>* AVLTree<K, V>::LR_rotate(Node<K, V>* p)
 1. 先以C为子树根节点，向右旋转，使得P子树成为RR型不平衡
 2. 再以P为子树根节点，向左旋转，新的子树达到平衡
 
-![img4](https://raw.githubusercontent.com/kaka2634/learn-algorithm/main/avl_tree/img4.png)
+![img4](/img/avl_tree/img4.png)
 
 在实现上，与LR是镜像问题，也是调用两次单旋转。这里也可以尝试先调用`rotate_left(p)`成为LR型，再调用`LR_rotate(p)`实现平衡。
 
-```
+```cpp
 //RL型(先向右后向左双旋转)
 template <class K, class V>
 Node<K, V>* AVLTree<K, V>::RL_rotate(Node<K, V>* p)
@@ -272,7 +272,7 @@ Node<K, V>* AVLTree<K, V>::RL_rotate(Node<K, V>* p)
 
 节点p的平衡因子就是其左子树的高度减去其右子树的高度：
 
-```
+```cpp
 template <class K, class V>
 int AVLTree<K, V>::get_balance_factor(Node<K, V>* p)
 {
@@ -283,7 +283,7 @@ int AVLTree<K, V>::get_balance_factor(Node<K, V>* p)
 
 对于平衡操作，可以通过计算根节点和孩子节点的平衡因子，将不平衡的归类成四种类型，从而调用相应类型的旋转来平衡。
 
-```
+```cpp
 template <class K, class V>
 Node<K, V>* AVLTree<K, V>::balance(Node<K, V>* p)
 {
@@ -321,7 +321,7 @@ Node<K, V>* AVLTree<K, V>::balance(Node<K, V>* p)
 ### 2.5 插入
 
 相比于一般二叉搜索树，在返回根节点时增加了平衡操作，同时因为插入会改变其他节点高度，需要重新计算一下新的根节点高度。
-```
+```cpp
 template <class K, class V>
 void AVLTree<K, V>::insert(K key, V value)
 {
@@ -362,7 +362,7 @@ Node<K, V>* AVLTree<K, V>::insert(Node<K, V>* p, K key, V value)
 
 ### 2.6 查找
 查找与一般二叉搜索树相同。
-```
+```cpp
 template <class K, class V>
 Node<K, V>* AVLTree<K, V>::find(K key)
 {
@@ -389,7 +389,7 @@ Node<K, V>* AVLTree<K, V>::find(Node<K, V>* p, K key)
 
 相比于一般二叉搜索树，在返回根节点之前增加了的平衡操作，同时也需要再次更新节点高度。
 
-```
+```cpp
 template <class K, class V>
 void AVLTree<K, V>::remove(K key)
 {
