@@ -1,4 +1,11 @@
-# 红黑树
+---
+layout: post
+title: 红黑树
+categories: study
+tags: [数据结构, 红黑树]
+subtitle: "标准模板库中的二叉搜索树"
+comment: true
+---
 
 ## 1. 红黑树的定义
 
@@ -336,15 +343,15 @@ Node<K, V>* BRTree<K, V>::insert_balance(Node<K, V>* pp, Node<K, V>* p, Node<K, 
 }
 ```
 
-#### 2.4.3 插入与AVL树对比
+#### 2.4.3 插入总结
 
-这里再将红黑树的插入与AVL树进行一下对比，加深一下印象，如果没有学习AVL树，可以先跳过这部分，并不会有任何影响。
+这里再将红黑树的插入与 AVL 树进行一下对比，加深一下印象，如果没有学习 AVL 树，可以先跳过这部分，并不会有任何影响。
 
-首先，在寻找插入位置时，两者逻辑并没有区别。只不过由于AVL树更为严格（树高差最大为1），所以总概率来看寻找插入位置应该更快。两者的主要区别在插入后如何平衡上，但平衡上也有相应的相通之处。
+首先，在寻找插入位置时，两者逻辑并没有区别。只不过由于 AVL 树更为严格（树高差最大为 1），所以总概率来看寻找插入位置应该更快。两者的主要区别在插入后如何平衡上，但平衡上也有相应的相通之处。
 
-在平衡判断上，两者都是因为树的平衡性质被打破导致。对于AVL树，就是插入位置导致子树间高度差增加了。而红黑树则是因为红色节点相连导致，因为这种情景出现的概率相比要小，所以需要旋转次数要更少。
+在平衡判断上，两者都是因为树的平衡性质被打破导致。对于 AVL 树，就是插入位置导致子树间高度差增加了。而红黑树则是因为红色节点相连导致，因为这种情景出现的概率相比要小，所以需要旋转次数要更少。
 
-在平衡情景上，AVL树也同样存在LL，LR，RL，RR四种旋转情景，目的也是为了将一个节点从一个子树移到另一边的子树。但红黑树因为多了颜色的属性，所以会增加变色的过程，同时还多出了一个只需要变色就能够实现平衡的情景。
+在平衡情景上，AVL 树也同样存在 LL，LR，RL，RR 四种旋转情景，目的也是为了将一个节点从一个子树移到另一边的子树。但红黑树因为多了颜色的属性，所以会增加变色的过程，同时还多出了一个只需要变色就能够实现平衡的情景。
 
 ### 2.5 查找
 
@@ -387,6 +394,8 @@ Node<K, V>* BRTree<K, V>::find(Node<K, V>* p, K key)
 - `S` 兄弟节点 (Sibling)
 - `C` 孩子节点，这里就表示被删除掉的节点
 
+灰色代表颜色可以是黑色也可以是红色。
+
 相比于插入考虑的节点，这里不需要考虑祖父节点和叔叔节点，但要考虑删除节点的兄弟节点的情况。
 
 #### 2.6.1 寻找删除位置
@@ -422,7 +431,7 @@ Node<K, V>* BRTree<K, V>::remove(Node<K, V>* p, K key, bool& balance_indicator)
     if (p->key == key) {
         //1. 如果没有左右孩子，直接删除该节点
         if (p->left == nullptr && p->right == nullptr) {
-            
+
             //如果替换结点是黑结点, 才需要平衡，通过balance_indicator告诉parent节点
             if (p->color == BLACK) {
                 balance_indicator = true;
@@ -475,29 +484,298 @@ Node<K, V>* BRTree<K, V>::remove(Node<K, V>* p, K key, bool& balance_indicator)
     }
     return p;
 }
+
+//返回节点p的最左子树节点，用于找到后继节点
+template <class K, class V>
+Node<K, V>* BRTree<K, V>::find_min(Node<K, V>* p)
+{
+    if (p == nullptr)
+        return p;
+    while (p->left != nullptr) {
+        p = p->left;
+    }
+    return p;
+}
 ```
+
 这里先增加了一个`balance_indicator`，目的是用于告诉父节点是否需要进行删除后平衡操作。主要因为采用的是递归，同时也没有在节点结构中没有增加`parent`指针，所以删除节点只能通过一个`balance_indicator` 在回溯的时候告诉父节点，具体在什么情况下需要进行平衡操作和怎么平衡操作，就在下一节具体讲解。
 
 #### 2.6.2 删除后平衡
 
-删除节点后的平衡操作相比插入平衡要更为复杂，那么先考虑一下删除什么节点会导致红黑树失去平衡呢？如果删除的是红色节点，那么并不会影响到红黑树平衡，所以无需平衡操作。而如果删除的是黑色节点，那么该路径的上黑色节点将减少，红黑树的性质5就被打破了，从而不得不需要平衡操作。
+删除节点后的平衡操作相比插入平衡要更为复杂，那么先考虑一下删除什么节点会导致红黑树失去平衡呢？如果删除的是红色节点，那么并不会影响到红黑树平衡，所以无需平衡操作。而如果删除的是黑色节点，那么该路径的上黑色节点将减少，红黑树的性质 5 就被打破了，从而不得不需要平衡操作。
 
 **所以当删除节点是黑色时，就需要进行平衡操作。**
 
+下面就先给出删除节点后的各种情景，从而分析相应的平衡操作：
+
+- 情景 1： 删除节点是父结点的左孩子
+  - 情景 1.1：删除节点的兄弟节点是黑色，兄弟结点的右孩子是红色，左孩子颜色任意
+  - 情景 1.2：删除节点的兄弟节点是黑色，兄弟节点的右孩子为黑色，左孩子为红色
+  - 情景 1.3：删除节点的兄弟节点是黑色，且兄弟节点的孩子均为黑色 （包括 `NIL`节点）
+  - 情景 1.4：删除节点的兄弟节点是红色
+- 情景 2： 删除节点是父节点的右孩子
+  - 情景 2.1：删除节点的兄弟节点是黑色，兄弟结点的左孩子是红色，右孩子颜色任意
+  - 情景 2.2：删除节点的兄弟节点是黑色，兄弟节点的左孩子为黑色，右孩子为红色
+  - 情景 2.3：删除节点的兄弟节点是黑色，且兄弟节点的孩子均为黑色 （包括 `NIL`节点）
+  - 情景 2.4：删除节点的兄弟节点是红色
+
+**情景 1： 删除节点是父结点的左孩子**
+
+由于左子树就少了一个黑色节点，在这种情景下, 就需要想办法从别的地方拿一个红色节点吗，然后通过变色来弥补删除的黑色节点。
+
+根据借的方式不同可以分为四种情景讨论，其中三种情景是删除节点的兄弟节点是黑色，一种情景是兄弟节点是红色。如果兄弟节点是黑色，其父节点和孩子节点的具体颜色也无法确定，所以需要根据兄弟节点的孩子节点颜色的不同再分情况讨论。 如果兄弟节点是红色，根据性质 3，其父节点和孩子节点一定都是黑色，只会出现一种情景。
+
+**情景 1.1 删除节点的兄弟节点是黑色，兄弟结点的右孩子是红色，左孩子颜色任意**
+
+由于兄弟节点的右孩子是红色，这样就可以从右子树拿一个节点到左子树来，变成黑色，就可以完成平衡了。操作就是通过旋转和变色完成：
+
+- 将`S`的颜色设为`P`的颜色
+- 将`P`设为黑色
+- 将`SR`设为黑色
+- 对`P`进行左旋
+
+![delete-balance-1](/img/black_red_tree/delete-balance-1.png)
+
+**情景 1.2 删除节点的兄弟节点是黑色，兄弟节点的右孩子为黑色，左孩子为红色**
+
+由于兄弟节点的左孩子是红色，依然可以从右子树拿一个节点到左子树来，变成黑色来完成平衡。这里先通过旋转把左孩子移到右孩子位置，变成情景 1.1 来统一处理：
+
+- 将`S`设为红色
+- 将`SL`设为黑色
+- 对`S`进行右旋，得到情景 1.1
+- 按照情景 1.1 处理
+
+![delete-balance-2](/img/black_red_tree/delete-balance-2.png)
+
+**情景 1.3 删除节点的兄弟节点是黑色，且兄弟节点的孩子均为黑色 （包括 NIL 节点）**
+
+由于右子树中的节点都是黑色，没办法借了，那怎么办呢？干脆大家都别过了，都少一个黑色节点算了。但这样的话，子树是黑色平衡的，但相比于其他子树就少了一层黑色节点，就需要告诉其他子树，我们这里少了一个黑色节点，你们有没有办法借一个红色节点给我，不行就一起减去一层黑色。所以，在处理黑色变红色后，要将`P`作为新的被删除的节点，继续向上判断：
+
+- 将 S 设为红色
+- 把 P 作为新的删除节点
+- 继续平衡判断
+
+![delete-balance-3](/img/black_red_tree/delete-balance-3.png)
+
+你可能在想这两个黑色节点不是一定是 NIL 节点吗？作为一开始确实是的。但是由于会向上遍历，其实删除节点不一定就是删除节点，而可能是被作为删除节点的子树的根节点`P`, 所以后面不一定就是`NIL`节点了。
+
+**情景 1.4：删除节点的兄弟节点是红色**
+
+如果兄弟节点是红色，可以确定其父节点和孩子节点一定是黑色。但借兄弟节点没有借兄弟的孩子容易，因为红色的兄弟节点可能会有两个孩子（非`NIL`节点）的情况，需要再匀一个黑色孩子过来，成为了删除节点的新的兄弟节点。其左子树需要重新按照情况 1.1-1.3，对左子树判断处理：
+
+- 将 S 设为黑色
+- 将 P 设为红色
+- 对 P 进行左旋，左子树得到情景 1.1-1.3
+- 左子树按照情景 1.1-1.3 处理
+
+![delete-balance-4](/img/black_red_tree/delete-balance-4.png)
+
+**情景 2：删除节点是父节点的右孩子**
+
+对于情况是右孩子的操作完全是左孩子的镜像。
+
+**情景 2.1：删除节点的兄弟节点是黑色，兄弟结点的左孩子是红色，右孩子颜色任意**
+这里就是向左子树来拿一个红色节点过来变成黑色：
+
+- 将`S`的颜色设为`P`的颜色
+- 将`P`设为黑色
+- 将`SL`设为黑色
+- 对`P`进行右旋
+
+![delete-balance-5](/img/black_red_tree/delete-balance-5.png)
+
+**情景 2.2：删除节点的兄弟节点是黑色，兄弟节点的左孩子为黑色，右孩子为红色**
+
+同样，先通过旋转变成情景 2.1 再处理：
+
+- 将`S`设为红色
+- 将`SR`设为黑色
+- 对`S`进行左旋，得到情景 2.1
+- 按照情景 2.1 处理
+
+![delete-balance-6](/img/black_red_tree/delete-balance-6.png)
+
+**情景 2.3：删除节点的兄弟节点是黑色，且兄弟节点的孩子均为黑色 （包括 `NIL`节点）**
+
+这种情景下就是先变色，再向上询问：
+
+- 将 S 设为红色
+- 把 P 作为新的删除节点
+- 继续平衡判断
+
+![delete-balance-7](/img/black_red_tree/delete-balance-7.png)
+
+**情景 2.4：删除节点的兄弟节点是红色**
+
+变色再旋转，处理好右子树：
+
+- 将 S 设为黑色
+- 将 P 设为红色
+- 对 P 进行右旋，右子树得到情景 2.1-2.3
+- 右子树按照情景 2.1-2.3 处理
+
+![delete-balance-8](/img/black_red_tree/delete-balance-8.png)
+
+**删除后平衡的代码实现**
+
+根据以上情景分析，可以写出对应代码。
+
+```cpp
+//删除平衡
+//p: parent 父节点
+//s: sibling 兄弟节点
+template <class K, class V>
+Node<K, V>* BRTree<K, V>::remove_balance(Node<K, V>* p, Node<K, V>* s, bool& balance_indicator)
+{
+
+    //情景1：删除节点是父结点的左孩子
+    if (p->right == s) {
+        //情景1.4：删除节点的兄弟节点是红色
+        if (s->color == RED) {
+            s->color = BLACK;
+            p->color = RED;
+            p = rotate_left(p);
+            //先调用balance方法处理左子树（情景1.1-1.3）
+            if (p->left->right != nullptr) {
+                p->left = remove_balance(p->left, p->left->right, balance_indicator);
+            }
+            s = p->right;
+        }
+        //情景1.1 - 1.3：删除节点的兄弟节点是黑色
+        if (s->color == BLACK) {
+            //情景1.3：兄弟节点的孩子均为黑色(包括NIL节点)
+            if ((s->left == nullptr || s->left->color == BLACK)
+                && (s->right == nullptr || s->right->color == BLACK)) {
+                s->color = RED;
+                //p 视为新的替换节点, 不改变indicator，返回后继续删除平衡操作
+                return p;
+            } else {
+                //情景1.2：兄弟节点的右孩子为黑色，左孩子为红色
+                if ((s->right == nullptr || s->right->color == BLACK)) {
+                    s->color = RED;
+                    if (s->left != nullptr) {
+                        s->left->color = BLACK;
+                    }
+                    //转换为删除情景1.1
+                    s = rotate_right(s); //rotate之后更新新的兄弟节点
+                    //注意：这里要将新的s链接上p
+                    p->right = s;
+                }
+
+                //情景1.1：兄弟结点的右孩子是红色，左孩子颜色任意
+                s->color = p->color;
+                p->color = BLACK;
+                if (s->right != nullptr) {
+                    s->right->color = BLACK;
+                }
+                p = rotate_left(p);
+                //平衡indicator 清除
+                balance_indicator = false;
+                return p;
+            }
+        }
+    } else { //情景2： 删除节点是父节点的右孩子
+        //情景2.4：删除节点的兄弟节点是红色
+        if (s->color == RED) {
+            s->color = BLACK;
+            p->color = RED;
+            p = rotate_right(p);
+            //先调用balance方法处理左子树（情景2.1-2.3）
+            if (p->right->left != nullptr) {
+                p->right = remove_balance(p->right, p->right->left, balance_indicator);
+            }
+            s = p->left;
+        }
+        //情景2.1 - 2.3：删除节点的兄弟节点是黑色
+        if (s->color == BLACK) {
+            //情景2.3：兄弟节点的孩子均为黑色(包括NIL节点)
+            if ((s->left == nullptr || s->left->color == BLACK)
+                && (s->right == nullptr || s->right->color == BLACK)) {
+                s->color = RED;
+                //p 视为新的替换节点, 不改变indicator，返回后继续删除平衡操作
+                return p;
+            } else {
+                //情景2.2：兄弟节点的左孩子为黑色，右孩子为红色
+                if ((s->left == nullptr || s->left->color == BLACK)) {
+                    s->color = RED;
+                    if (s->right != nullptr) {
+                        s->right->color = BLACK;
+                    }
+                    //转换为情景2.1
+                    s = rotate_left(s); //rotate之后更新新的兄弟节点
+                    //注意：这里要将新的s链接上p
+                    p->left = s;
+                }
+
+                //情景2.1：兄弟结点的左孩子是红色，右孩子颜色任意
+                s->color = p->color;
+                p->color = BLACK;
+                if (s->left != nullptr) {
+                    s->left->color = BLACK;
+                }
+                p = rotate_right(p);
+                //平衡indicator 清除
+                balance_indicator = false;
+                return p;
+            }
+        }
+    }
+}
+```
+
+#### 2.6.3 删除总结
+
+从什么时候需要平衡上，对比红黑树的插入与删除：
+
+- 插入操作可能产生红色节点相邻的情景，违背了性质 3，所以当插入是红色节点才会打破平衡。
+- 删除操作可能会产生黑色节点减少，违背性质 5，所以当删除的是黑色节点才会打破平衡。
+
+从怎么进行平衡操作上，对比红黑树的插入与删除：
+
+- 插入平衡主要是看叔叔节点，看能不能帮忙匀走一个红色节点。实在不行，只能通过变色增加一层黑色节点，再向上询问。
+- 删除平衡主要看兄弟节点，问问兄弟节点的孩子们，能不能借一个红色节点过来变成黑色。实在不行，这才去掉一层黑色节点，再向上询问。
+
+对比红黑树与 AVL 树的删除平衡操作：
+
+- AVL 树的删除后平衡是与插入平衡相同的，因为违背的是同一个性质，所以调用相同的平衡操作。
+- 红黑树的删除平衡因为和插入平衡破坏的是不同的性质，所以需要不同的平衡操作来重新达到自平衡。
 
 ### 3. 最后
 
-### 3.1 完整代码和测试
+### 3.1 完整递归代码和测试
 
-#### 递归实现
+头文件：[black_red_tree_recursive.h](https://github.com/kaka2634/learn-algorithm/blob/main/black_red_tree/black_red_tree_recursive.h)
 
-#### 非递归实现
+cpp 文件：[black_red_tree_recursive.cpp](https://github.com/kaka2634/learn-algorithm/blob/main/black_red_tree/black_red_tree_recursive.cpp)
 
-#### 测试
+```
+*************************
+After inserted, tree is:
+pre order:
+30(B) 10(B) 20(R) 60(R) 40(B) 50(R) 80(B) 70(R) 90(R)
+mid order:
+10(B) 20(R) 30(B) 40(B) 50(R) 60(R) 70(R) 80(B) 90(R)
+*************************
+remove value: 80 tree balance check : 1
+remove value: 10 tree balance check : 1
+remove value: 50 tree balance check : 1
+remove value: 40 tree balance check : 1
+*************************
+After removed, tree is:
+pre order:
+30(B) 20(B) 70(R) 60(B) 90(B)
+mid order:
+20(B) 30(B) 60(B) 70(R) 90(B)
 
-直接使用 while 循环 判断条件，达到就 return，否则就更新遍历指针，再 continue
+```
 
-注意点就是 rotate 之后，树的形状已经更新，但是在调用 rotate 之前的指针，需要再次更新（比方 p 指针在 rotate 之后，已经不是 p 了，需要根据返回值更新自己）
+#### 非递归完整代码
+
+这里给出非递归的完整代码，主要区别在于增加了一个`parent`指针，使用`while`循环去遍历整个树，这一般才是会用在标准库的实现方式。因为效率要比递归方式更高。
+
+头文件：[black_red_tree.h](https://github.com/kaka2634/learn-algorithm/blob/main/black_red_tree/black_red_tree.h)
+
+cpp 文件：[black_red_tree.cpp](https://github.com/kaka2634/learn-algorithm/blob/main/black_red_tree/black_red_tree.cpp)
 
 ### 3.2 参考文档
 

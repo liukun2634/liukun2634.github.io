@@ -113,6 +113,13 @@ pre,
     -webkit-overflow-scrolling: touch;
 }
 
+/* override bootstrap code format */
+code {
+    color: #404040;
+    background-color:#f2f2f2;
+}
+
+
 pre code {
     display: block;
     width: auto;
