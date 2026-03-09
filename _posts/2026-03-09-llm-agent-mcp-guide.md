@@ -1,9 +1,11 @@
+---
 layout: post
-title: LLM、Agent 与 MCP：统一概念与实践指南
+title: LLM、Agent 与 MCP 概念
 categories: study
 tags: [AI, LLM, Agent, MCP, Skill]
 subtitle: "LLM、Agent、MCP、Skill、MCP Server 统一架构与工程实践"
 comment: true
+---
 
 > 本文以统一视角解释大型语言模型（LLM）、Agent、MCP（Model/Model-Context Protocol）、Skill 与 MCP Server 之间的关系，给出整体架构图、交互流程、最小可运行实现思路与安全/运维建议，便于工程化落地。
 
