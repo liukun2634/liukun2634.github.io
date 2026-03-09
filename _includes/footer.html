@@ -11,3 +11,50 @@
         </div>
     </div>
 </footer>
+<!-- Load scripts at end of body to reduce render-blocking -->
+<script defer src="/js/jquery.min.js"></script>
+<script defer src="/js/bootstrap.min.js"></script>
+<script defer src="/js/kun-blog.min.js"></script>
+
+<!-- Lazy-load mermaid only when mermaid blocks exist -->
+<script>
+    (function(){
+        function convertMermaidBlocks(){
+            document.querySelectorAll('pre > code[class*="mermaid"], pre > code[class*="language-mermaid"], pre > code[class*="lang-mermaid"]').forEach(function(code){
+                var pre = code.parentNode;
+                var mermaidDiv = document.createElement('div');
+                mermaidDiv.className = 'mermaid';
+                mermaidDiv.textContent = code.textContent;
+                pre.parentNode.replaceChild(mermaidDiv, pre);
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function(){ convertMermaidBlocks(); loadIfNeeded(); });
+        } else { convertMermaidBlocks(); loadIfNeeded(); }
+
+        function loadIfNeeded(){
+            if (document.querySelector('.mermaid')){
+                var s = document.createElement('script');
+                s.src = '/js/mermaid.min.js';
+                s.defer = true;
+                s.onload = function(){
+                    if (window.mermaid){
+                        mermaid.initialize({ startOnLoad: false });
+                        try { mermaid.init(undefined, document.querySelectorAll('.mermaid')); } catch(e){ console && console.error(e); }
+                    }
+                };
+                document.head.appendChild(s);
+            }
+        }
+    })();
+</script>
+<script>
+    // Ensure images are lazy-loaded where supported
+    (function(){
+        if ('loading' in HTMLImageElement.prototype) {
+            document.querySelectorAll('img').forEach(function(img){ if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy'); });
+        } else {
+            // Optionally load a lazyload polyfill here
+        }
+    })();
+</script>
