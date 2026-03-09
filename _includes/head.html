@@ -28,7 +28,33 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- jQuery -->
-    <!-- Move JS to footer and lazy-load mermaid when needed to avoid render-blocking -->
+    <script src=" /js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/kun-blog.min.js"></script>
+
+    <!-- Mermaid diagrams -->
+    <script src="/js/mermaid.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Convert fenced code blocks (common markdown output) to <div class="mermaid"> so mermaid can render them
+        document.querySelectorAll('pre > code[class*="mermaid"], pre > code[class*="language-mermaid"], pre > code[class*="lang-mermaid"]').forEach(function(code){
+          var pre = code.parentNode;
+          var mermaidDiv = document.createElement('div');
+          mermaidDiv.className = 'mermaid';
+          mermaidDiv.textContent = code.textContent;
+          pre.parentNode.replaceChild(mermaidDiv, pre);
+        });
+
+        if (window.mermaid) {
+          mermaid.initialize({ startOnLoad: false });
+          try { mermaid.init(undefined, document.querySelectorAll('.mermaid')); } catch (e) { console && console.error(e); }
+        }
+      });
+    </script>
 
     <!-- Google analytics  -->
     {% if site.google_analytics %}
