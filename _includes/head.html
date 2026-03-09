@@ -40,8 +40,18 @@
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Convert fenced code blocks (common markdown output) to <div class="mermaid"> so mermaid can render them
+        document.querySelectorAll('pre > code[class*="mermaid"], pre > code[class*="language-mermaid"], pre > code[class*="lang-mermaid"]').forEach(function(code){
+          var pre = code.parentNode;
+          var mermaidDiv = document.createElement('div');
+          mermaidDiv.className = 'mermaid';
+          mermaidDiv.textContent = code.textContent;
+          pre.parentNode.replaceChild(mermaidDiv, pre);
+        });
+
         if (window.mermaid) {
-          mermaid.initialize({ startOnLoad: true });
+          mermaid.initialize({ startOnLoad: false });
+          try { mermaid.init(undefined, document.querySelectorAll('.mermaid')); } catch (e) { console && console.error(e); }
         }
       });
     </script>
